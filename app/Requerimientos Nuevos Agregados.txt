@@ -1,0 +1,10 @@
+1-Efectos de muerte y meta.
+2-Teletransporte agregado.
+3-Centrado dinámico (La posición del mapa que siempre esté en el centro).
+4-Agregar enemigos movibles.
+5-Pinchos agregados y con efecto.
+6-Variedad de niveles en colores.
+7-Como tiene base de datos json, un hall of fame de récord actual.
+8-Personalización a los enemigos.
+9-Pantalla de transición entre niveles.
+10-Animaciones nuevas en enemigos, meta, muerte, player y pinchos.

@@ -1,0 +1,113 @@
+= Juego - Laberinto: Fabirinto 2.0
+include::config/atributos.adoc[]
+
+image::img-banner.png[Banner, width=50%, align="center"]
+
+== *Autores*
+* Allan González
+* Andrés Reyes
+* Fernando Reyes
+* Mitchael Ruíz 
+
+== *Problema*
+En este informe se documenta la nueva personalización de un juego de lógica y habilidad denominado **Fabirinto 2.0**. El programa permite al usuario navegar a través de diferentes niveles de complejidad, gestionando recursos limitados como el tiempo y la vida, a través de distintos enemigos y pinchos que esquivar para poder llegar a la meta.
+
+== *Requerimientos*
+
+=== *Requerimientos Funcionales*
+
+* *RF01:* - Pantalla de Inicio
+
+* *RF02:* - El JUGADOR debe iniciar la partida con 3 VIDAS por NIVEL.
+
+* *RF03:* - El juego debe contener 3 NIVELES de dificultad progresiva.
+
+* *RF04:* - Cada NIVEL debe tener un TIEMPO LÍMITE.
+
+** Niveles: 100
+
+* *RF05:* - Cada NIVEL debe tener una META clara.
+
+* *RF06:* - Se puede avanzar al siguiente NIVEL solo completando el NIVEL actual. Al completarse, se enseña un MENSAJE de NIVEL completado.
+
+* *RF07:* - El juego finaliza al COMPLETAR el NIVEL 3, o al PERDER todas las VIDAS.
+
+* *RF08:* - Las VIDAS disminuyen al COLISIONAR con trampas.
+
+* *RF09:* - El JUGADOR puede desplazarse por el mapa usando las teclas W,A,S,D.
+
+* *RF10:* - Hay distintos Enemigos que esquivar que merodean horizontalmente los pasillos del mapa.
+
+* *RF11:* - El PERSONAJE no debe atravesar paredes u obstáculos sólidos.
+
+* *RF12:* - El MOVIMIENTO del PERSONAJE será CARDINAL (Norte, Sur, Este, Oeste).
+
+* *RF13:* - Pendiente determinar las TRAMPAS.
+
+* *RF14:* - El TIEMPO restante debe mostrarse en pantalla como cuenta regresiva.
+
+** El TIEMPO se DETIENE al TERMINAR el NIVEL o al PAUSAR el JUEGO.
+
+* *RF15:* - El JUEGO debe llevar un REGISTRO de la puntuación ACTUAL.
+
+* *RF16:* - La PUNTUACIÓN aumenta:
+
+* *RF17:* - Al finalizar la PARTIDA, se guardan los PUNTOS obtenidos en la base de datos.
+
+** Se enseñará un RANKING con las 5 mejores PUNTUACIONES.
+
+* *RF18* - La Interfaz Gráfica enseñará:
+
+** Nivel Actual.
+
+** Vidas Restantes.
+
+** Tiempo Restante
+
+=== *Requerimientos No Funcionales*
+
+* *RNF01:* - Lenguaje y Librerías: Uso obligatorio de Python 3 y la librería Pygame para la interfaz (GUI).
+
+* *RNF02:* - Entorno de Ejecución: El software debe ser plenamente operativo en sistemas Debian 12 y Debian 13 mediante la Terminal de Linux.
+
+* *RNF03:* - Paradigma de Desarrollo: Estructura de código basada en POO (Programación Orientada a Objetos).
+
+* *RNF04:* - Estándar de Documentación: Generación de manuales y reportes técnicos en formato .adoc (Asciidoctor) e integración de diagramas PlantUML.
+
+* *RNF05:* - Persistencia de Datos: El almacenamiento de puntuaciones y ranking debe gestionarse mediante el motor de base de datos MariaDB.
+
+== *Diagrama de Flujo*
+image::img-diagrama-flujo.png[Diagrama de Flujo, width=600, align="center"]
+
+== *Diagrama de Clase*
+image::img-diagrama-clase.png[Diagrama de Clase, width=600, align="center"]
+
+== Estructura de Directorios
+[source,text]
+----
+Laberinto
+├── app
+│   ├── main.py
+│   ├── puntuaciones.json
+│   ├── Requerimientos Nuevos Agregados.txt
+│   └── requirements.txt
+├── doc
+│   ├── build
+│   │   └── html
+│   │       ├── index.html
+│   │       └── recursos
+│   │           ├── diagrama-flujo.puml
+│   │           ├── img-banner.png
+│   │           ├── img-diagrama-clase.png
+│   │           └── img-diagrama-flujo.png
+│   ├── config
+│   │   └── atributos.adoc
+│   ├── index.adoc
+│   └── recursos
+│       ├── diagrama-flujo.puml
+│       ├── img-banner.png
+│       ├── img-diagrama-clase.png
+│       └── img-diagrama-flujo.png
+└── README.md
+
+----

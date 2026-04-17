@@ -1,0 +1,16 @@
+:docdate: 2026-03-13
+:encoding: utf-8
+:lang: es
+:icons: font
+:toc: right
+:toc-title: Tabla de Contenido
+:sectnums:
+:doctype: book
+:copyblocks:
+:linkattrs:
+:experimental:
+:plantuml:
+:figure-caption: Figura
+:example-caption: Ejemplo
+:table-caption: Tabla
+:imagesdir: recursos/

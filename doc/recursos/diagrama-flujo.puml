@@ -1,0 +1,75 @@
+@startuml
+title Diagrama de Flujo - Fabirinto 2.0
+
+start
+
+:Ingresar nombre del jugador;
+:vidas = 3;
+:puntos = 0;
+:nivel = 1;
+
+:Cargar nivel;
+:Posicionar jugador en inicio;
+:tiempo_restante = 100;
+
+repeat
+  :Procesar eventos;
+  
+  if (Usuario cierra ventana?) then (sí)
+    stop
+  endif
+  
+  :Mover jugador (colisiones con muros);
+  :Actualizar enemigos y elementos;
+  
+  if (Jugador toca portal?) then (sí)
+    if (Pasó 1 segundo desde último teleport?) then (sí)
+      :Teletransportar al otro portal;
+    endif
+  endif
+  
+  if (Jugador toca premio?) then (sí)
+    :puntos = puntos + 50;
+    :Eliminar premio;
+  endif
+  
+  if (Jugador toca enemigo?) then (sí)
+    :Llamar a morir();
+  endif
+  
+  if (Jugador toca trampa y altura > 0.7?) then (sí)
+    :Llamar a morir();
+  endif
+  
+  if (Pasó 1 segundo?) then (sí)
+    :tiempo_restante = tiempo_restante - 1;
+  endif
+  
+  if (tiempo_restante <= 0?) then (sí)
+    :Llamar a morir();
+  endif
+  
+  if (Jugador toca meta?) then (sí)
+    if (nivel < 3?) then (sí)
+      :nivel = nivel + 1;
+      :Cargar siguiente nivel;
+      :Reiniciar posición y tiempo;
+    else (no)
+      :Guardar puntuación;
+      :Mostrar VICTORIA;
+      :Esperar ENTER;
+      stop
+    endif
+  endif
+  
+  :Dibujar todo en pantalla;
+  :Esperar 16ms;
+
+repeat while (vidas > 0) is (verdadero)
+
+:Guardar puntuación;
+:Mostrar GAME OVER y tabla de records;
+:Esperar ENTER;
+stop
+
+@enduml
